@@ -8,7 +8,6 @@
 // @run-at      document-start
 // ==/UserScript==
 
-if (window.location.href.match("_escaped_fragment_") > -1) {
+if (document.querySelectorAll('meta[name="discourse_theme_id"]').length > 0 && window.location.href.match("_escaped_fragment_") > -1) {
   window.location.href = window.location.href + "?_escaped_fragment_";
-  reload();
 }
